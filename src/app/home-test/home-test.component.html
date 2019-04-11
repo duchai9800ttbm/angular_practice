@@ -1,0 +1,67 @@
+<div class="nav-container">
+    <nav class="nav">
+      <div class="logo">
+        <img src="assets/img/logo-menu.png">
+      </div> 
+      <div class="navigation-container">
+        <ul class="navigation">
+          <li>
+            <a routerLink="/login" routerLinkActive="active">trang chủ</a>
+          </li>
+          <li>
+            <a routerLink="prospect" routerLinkActive="active">tiềm năng</a>
+          </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active">khách hàng</a>
+          </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active">liên hệ</a>
+          </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active">cơ hội</a>
+          </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active">chiến dịch</a>
+          </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active">hoạt động</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-nav">
+        <div class="search">
+          <img src="assets/img/icon-search.png" class="icon">
+        </div>
+        <div class="noti">
+          <img src="assets/img/icon-noti.png" class="icon">
+        </div>
+        <div class="account">
+          <img src="" class="avatar">
+          <h3 class="user-name"></h3>
+        </div>
+      </div>
+    </nav>
+    <div class="body-container">
+      <div class="history-change">
+        <button (click)="show = !show" class="toggle-history">
+          thay đổi gần đây
+          <i class="icon-dropdown" [@toggle]="show ? 'show' : 'hide'"></i>
+        </button>
+        <ul *ngIf="show" [@enterAnimation]>
+          <li *ngFor="let item of history" class="story-item">
+            <div class="story-item-img">
+              <img src="assets/img/avatar.jpg">
+            </div>
+            <div class="story-item-content">
+              <p><span class="username">{{item.user}}</span> đã {{item.objectTypeName}}</p>
+              <span class="date">{{item.date | date: 'dd/MM/yyyy'}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+        <!-- <app-home></app-home> -->
+      </div>
+    </div>
+  </div>

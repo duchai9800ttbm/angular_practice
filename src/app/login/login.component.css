@@ -1,0 +1,81 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-login-container {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.logo-container > img{
+  width: 150px;
+  height: 150px;
+}
+
+.title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: #1888e4;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.forgot-password {
+  background-color: transparent;
+  color: #1fb0c3;
+  border: none;
+}
+
+.forgot-password:active {
+  background-color: transparent !important;
+  outline: 0 !important;
+}
+
+.forgot-password:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+
+.login {
+  margin-top: 40px;
+  background-color: #1fb0c3;
+}
+
+.disable {
+  pointer-events: none;
+  background-color: #6beeffdf;
+}
+
+.error {
+  border: 1px solid #e65f5f;
+}
+
+.error:focus {
+  border-color: #e65f5f;
+  box-shadow: 0 0 0 0.2rem #ffa7a7a6;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  color: #e65f5f;
+}
+
+.errorMessage > li {
+  list-style-type: none;
+}

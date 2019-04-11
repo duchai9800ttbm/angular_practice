@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #acacac !important;
+}
+
+ul, p, label {
+  margin-bottom: 0 !important;
+}

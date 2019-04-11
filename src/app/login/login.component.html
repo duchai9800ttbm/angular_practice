@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="form-login-container">
+    <div class="logo-container">
+      <img src="assets/img/logo.png">
+    </div>
+    <h2 class="title">moc hoa binh</h2>
+    <form #form="ngForm" (submit)="onSubmit(form)">
+      <div class="alert alert-danger" role="alert" *ngIf="invalidUser">
+          Nhập sai tên người dùng hoặc mật khẩu!
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" [(ngModel)]="user.username" pattern="[A-Za-z0-9]{0,}" #inputUsername="ngModel" placeholder="user" name="username" required minlength="5" [class.error]="inputUsername.invalid && form.submitted">
+        <ul *ngIf="inputUsername.invalid && form.submitted" class="errorMessage">
+          <li *ngIf="inputUsername.errors.required">Trường này là bắt buộc nhập</li>
+          <li *ngIf="inputUsername.errors.minlength">Trường này chứa ít nhất {{inputUsername.errors.minlength.requiredLength}} kí tự</li>
+          <li *ngIf="inputUsername.errors.pattern">Trường này không chứa các kí tự đặc biệt</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password" #inputPassword="ngModel" placeholder="******" required name="password" [class.error]="inputPassword.invalid && form.submitted">
+        <ul *ngIf="inputPassword.invalid && form.submitted" class="errorMessage">
+          <li *ngIf="inputPassword.errors.required">Trường này là bắt buộc nhập</li>
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block login">LOGIN</button>
+      <button type="button" class="btn btn-primary btn-block forgot-password">FORGOT PASSWORD?</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+.nav-container {
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.nav {
+  background-color: #17a2b8;
+  display: flex;
+}
+
+.navigation-container, .right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.nav {
+  position: relative;
+}
+
+.right-nav {
+  right: 0;
+  position: absolute;
+  height: 100%;
+}
+
+.navigation {
+  display: flex;
+  height: fit-content;
+}
+
+.navigation > li {
+  list-style-type: none;
+  height: fit-content;
+}
+
+.navigation > li > a {
+  color: #ffffff;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+
+.navigation > li > a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  width: 200px;
+  padding: 10px 0 10px 10px;
+  box-sizing: border-box;
+}
+
+.logo > img {
+  height: 45px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.account {
+  width: 200px;
+}
+
+.body-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100%;
+}
+
+.history-change {
+  height: 100%;
+  background-color: #f3f7f7;
+}
+
+.story-item {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  margin-bottom: 20px; 
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.story-item-img {
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.story-item-img > img {
+  width: 35px;
+  height: 35px;
+  background-color: #8a8a8a;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.story-item-content > span, .story-item-content > p {
+  font-size: 12px;
+  display: inline-block;
+  color: #3f3f3f;
+}
+
+.story-item-content .username {
+  font-weight: 600;
+}
+
+.story-item-content .date {
+  font-size: 11px;
+  color: #8a8a8a;
+  margin-top: 7px;
+}
+
+.toggle-history {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #8a8a8a;
+  padding: 20px 15px 30px 15px;
+  text-align: left;
+  position: relative;
+}
+
+.toggle-history:focus {
+  outline: none;
+}
+
+.icon-dropdown {
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/img/icon-dropdown.png');
+  background-size: contain;
+  position: absolute;
+  right: 25px;
+}
