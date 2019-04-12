@@ -12,13 +12,16 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavComponent } from './nav/nav.component';
 import { CheckNullPipe } from './pipe/check-null.pipe';
+import { ProspectStatusPipe } from './pipe/prospect-status.pipe';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFoundComponent,
-    NavComponent
+    NavComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,

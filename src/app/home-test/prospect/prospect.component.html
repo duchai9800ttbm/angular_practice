@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="prospect-utils">
+  <div class="utils-control">
     <div class="title">
       <h2>danh sách tiềm năng</h2>
     </div>
@@ -8,11 +8,13 @@
         <label for="search-text"><p>Tìm kiếm theo</p></label>
         <input type="text" class="form-control" name="sreach-text" placeholder="Tên, họ, sđt, email...">
       </div>
-      <button class="btn btn-primary">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-        &nbsp; thêm tiềm năng
+      <button class="btn btn-primary btn-left20">
+        <a [routerLink]="['create']" routerLinkActive="router-link-active" >
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          &nbsp; thêm tiềm năng
+        </a>
       </button>
-      <button class="btn btn-primary">
+      <button class="btn btn-primary btn-left20">
         <i class="fa fa-refresh" aria-hidden="true"></i>
       </button>
     </div>
@@ -111,11 +113,11 @@
               </select>
             </div>
           </div>
-          <button class="btn btn-primary btn-size38">
+          <button class="btn btn-primary btn-size38 btn-left20">
             <i class="fa fa-filter" aria-hidden="true"></i>
             &nbsp; lọc
           </button>
-          <button class="btn btn-primary btn-size38">
+          <button class="btn btn-primary btn-size38 btn-left20">
             <i class="fa fa-close" aria-hidden="true"></i>
             &nbsp; xóa lọc
           </button>
@@ -128,22 +130,30 @@
         </button>
       </div>
     </div>
+    <option>2</option>
     <div class="content">
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col" *ngFor="let col of colunmNames">{{col}}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of dataList; let i = index">
-            <th scope="row">{{i}}</th>
-            <td>{{data.name}}</td>
-            <td>{{data.company | checkNull}}</td>
-            <td>{{data.gender | checkNull}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <table class="table" id="table-data" mdbTable mdbTableScroll scroll="true" maxWidth="900">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col" *ngFor="let col of colunmNames">{{col}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of dataList | paginate: { id: 'tableData', itemsPerPage: 10, currentPage: p, totalItems: total }; let i = index">
+              <th scope="row">{{(p - 1) * 10 + i + 1}}</th>
+              <td>{{data.name}}</td>
+              <td>{{data.company | checkNull}}</td>
+              <td>{{data.gender | checkNull}}</td>
+              <td>{{data.cellphone | checkNull}}</td>
+              <td>{{data.potentialStatus | prospectStatus}}</td>
+              <td>{{data.employee?.name | checkNull}}</td>
+              <td>{{data.employeeGroup?.name | checkNull}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="pageChange($event)" id="tableData"></pagination-controls>
+      </div>
     </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeTestComponent } from './home-test.component';
 import { ProspectComponent } from './prospect/prospect.component';
+import { FormComponent } from './prospect/form/form.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,11 @@ const routes: Routes = [
     children: [
       {
         path: 'prospect',
-        component: ProspectComponent
+        component: ProspectComponent,
+      },
+      {
+        path: 'prospect/create',
+        component: FormComponent
       }
     ]
   }
