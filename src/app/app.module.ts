@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,17 +11,15 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavComponent } from './nav/nav.component';
-import { CheckNullPipe } from './pipe/check-null.pipe';
-import { ProspectStatusPipe } from './pipe/prospect-status.pipe';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DynamicInputComponent } from './dynamic-form/dynamic-input/dynamic-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFoundComponent,
-    NavComponent,
-    DynamicFormComponent
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +27,8 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    // ReactiveFormsModule
   ],
   providers: [
     {
