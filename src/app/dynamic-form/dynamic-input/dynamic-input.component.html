@@ -1,10 +1,46 @@
-<div [formGroup]="form">
-  <label [attr.for]="question.key">{{question.label}}</label>
+<div [formGroup]="form" class="wrapper form-group">
+  <label [attr.for]="question.key" class="label vertical-center">
+    <p>
+      {{question.label}}
+      <span *ngIf="question.required" class="required">*</span>
+    </p>
+  </label>
+  <!-- {{question | json}} -->
   <div [ngSwitch]="question.controlType">
-    <input *ngSwitchCase="'textbox'" [formControlName]="question.key" [id]="question.key" [type]="question.type">
-    <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
-    </select>
+
+    <div *ngSwitchCase="'textbox'" class="vertical-center">
+      <div [ngClass]="{'custom-search': question.type == 'search', 'custom-date': question.type == 'date'}" class="full-width">
+        <input *ngIf="question.directive" [formControlName]="question.key" [id]="question.key" [type]="question.type" [placeholder]="question.placeholder" class="form-control text-right" [appCurrency]="form.get(question.key).value"
+        (appCurrencyChange)="form.get(question.key).setValue($event)">
+        <input *ngIf="!question.directive" [formControlName]="question.key" [id]="question.key" [type]="question.type" [placeholder]="question.placeholder" class="form-control">
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'radio'" class="display-flex">
+      <div *ngFor="let opt of question.options" class="checkbox">
+        <input type="radio" name="question.name" value="opt.value">
+        <label>{{opt.name}}</label>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'dropdown'" class="vertical-center">
+      <div class="custom-dropdown">
+        <select [id]="question.key" [formControlName]="question.key" value="default" class="form-control">
+          <option value="default">--Lựa Chọn--</option>
+          <option *ngFor="let opt of listOptions" [value]="opt[pair.value]">{{opt[pair.text]}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'textarea'" class="vertical-center">
+      <textarea [formControlName]="question.key" [id]="question.key" cols="30" rows="1" class="form-control"></textarea>
+    </div>
+
+    <div *ngIf="question.editor" class="vertical-center">
+      <button class="edit">
+        <i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
   </div>
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
 </div>

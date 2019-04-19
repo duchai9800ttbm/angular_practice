@@ -11,15 +11,20 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavComponent } from './nav/nav.component';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { DynamicInputComponent } from './dynamic-form/dynamic-input/dynamic-input.component';
+import { CurrencyDirective } from './directives/currency.directive';
+import { TimerComponent } from './timer/timer.component';
+import { TimeComponent } from './timer/time/time.component';
+import { UtcComponent } from './timer/utc/utc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFoundComponent,
-    NavComponent
+    NavComponent,
+    TimerComponent,
+    TimeComponent,
+    UtcComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { DynamicInputComponent } from './dynamic-form/dynamic-input/dynamic-inpu
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    // ReactiveFormsModule
+    ReactiveFormsModule
   ],
   providers: [
     {

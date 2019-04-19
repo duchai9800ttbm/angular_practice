@@ -5,6 +5,8 @@ export class QuestionBase<T> {
   required: boolean;
   order: number;
   controlType: string;
+  api: string = null;
+  pair: { value: string, text: string } = null;
 
   constructor(options: {
       value?: T,

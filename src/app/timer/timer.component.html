@@ -1,0 +1,8 @@
+<p>
+  timer works!
+</p>
+<form [formGroup]="form">
+  {{form.get('datetime').value}} <br>
+  {{form.get('datetime').value | date}}
+  <app-time formControlName="datetime"></app-time>
+</form>

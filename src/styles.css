@@ -13,7 +13,7 @@ ul, p, label, h2 {
 }
 
 .container {
-  width: 100%;
+  width: 100% !important;
   padding: 0 20px;
 }
 
@@ -93,4 +93,67 @@ ul, p, label, h2 {
 
 .media-head {
   color: #17a2b8;
+}
+
+.custom-dropdown, .custom-search,
+.custom-date {
+  position: relative;
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.custom-dropdown select {
+  border: 1px solid #17a2b8;
+  border-radius: 5px 0 0 5px;
+  font-size: 13px;
+}
+
+.custom-dropdown select > option {
+  font-size: 13px;
+}
+
+.custom-dropdown::after, .custom-search::after,
+.custom-date::after {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  background-color: #17a2b8;
+  position: absolute;
+  color: #ffffff;
+  content: '\25BC';
+  pointer-events: none;
+}
+
+.custom-search::after {
+  content: '\1F50D';
+}
+
+.custom-date::after {
+  font-family: FontAwesome;
+  content: '\f073';
+}
+
+.form-group {
+  margin-bottom: 0 !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.span2 .wrapper {
+  grid-template-columns: 25% 75% !important;
 }

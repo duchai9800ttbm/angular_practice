@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { QuestionBase } from './question-base';
 import { FormGroup } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dynamic-input',
@@ -11,11 +13,18 @@ export class DynamicInputComponent implements OnInit {
 
   @Input() question: QuestionBase<any>;
   @Input() form: FormGroup;
+  listOptions = [];
+  pair;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
-    // console.log(this.form);
+    if (this.question.api) {
+      // tslint:disable-next-line: no-string-literal
+      this.data.getDataForCheckbox(this.question.api).subscribe(data => this.listOptions = data.result);
+      this.pair = this.question.pair;
+      // console.log(this.pair);
+    }
   }
 
   get isValid() {

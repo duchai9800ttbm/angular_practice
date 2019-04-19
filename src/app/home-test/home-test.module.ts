@@ -13,6 +13,8 @@ import { ProspectStatusPipe } from '../pipe/prospect-status.pipe';
 import { FormComponent } from './prospect/form/form.component';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
 import { DynamicInputComponent } from '../dynamic-form/dynamic-input/dynamic-input.component';
+import { FormEditComponent } from './prospect/form-edit/form-edit.component';
+import { CurrencyDirective } from '../directives/currency.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DynamicInputComponent } from '../dynamic-form/dynamic-input/dynamic-inp
     ProspectStatusPipe,
     FormComponent,
     DynamicFormComponent,
-    DynamicInputComponent
+    DynamicInputComponent,
+    FormEditComponent,
+    CurrencyDirective
   ],
   imports: [
     CommonModule,

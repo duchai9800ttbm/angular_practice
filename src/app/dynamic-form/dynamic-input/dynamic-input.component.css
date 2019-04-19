@@ -1,0 +1,86 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background-color: #ffffff;
+  /* padding: 10px 50px 10px 0; */
+}
+
+.wrapper > div {
+  display: grid;
+  grid-template-columns: 1fr 38px;
+  grid-column-gap: 10px;
+  padding: 0 40px 0 20px;
+}
+
+input {
+  height: 38px;
+}
+
+.custom-dropdown::after, .custom-search::after, .custom-date::after {
+  height: 38px;
+  border-radius: 0 5px 5px 0;
+}
+
+.custom-dropdown, .custom-search, .custom-date {
+  width: 100%;
+  height: 38px;
+}
+
+.custom-dropdown > select {
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+.label {
+  background-color: #f8f9fa;
+  padding: 15px 0;
+  padding-right: 20px;
+  border-right: 1px solid rgba(0,0,0,.15);
+}
+
+.label > p{
+  text-align: end;
+  width: 100%;
+}
+
+.edit {
+  background-color: #17a2b8;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 5px;
+}
+
+.edit > i {
+  color: #ffffff;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.checkbox > label {
+  margin-left: 10px;
+}
+
+.required {
+  color: red;
+}
+
+input[type='checkbox'] {
+  width: auto;
+  height: auto;
+}
+
+.text-right {
+  text-align: right;
+}

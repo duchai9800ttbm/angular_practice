@@ -1,10 +1,44 @@
 <div>
   <form [formGroup]="form">
 
-    <div *ngFor="let question of questions" class="form-row">
-      <app-dynamic-input [question]="question" [form]="form"></app-dynamic-input>
+    <div class="group-form">
+      <div class="btn-detail" (click)="show = !show">
+        <i class="fa fa-caret-down" aria-hidden="true" [@toggleIcon]="show ? 'show' : 'hide'"></i>
+        &nbsp; Chi tiết tiềm năng
+      </div>
+      <div [@toggle]="show ? 'show' : 'hide'" class="toggle-detail template-form">
+        <div *ngFor="let question of questions" class="form-row">
+          <app-dynamic-input [question]="question" [form]="form"></app-dynamic-input>
+        </div>
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+      </div>
     </div>
 
+    <div class="group-form top20">
+      <div class="btn-detail" (click)="show1 = !show1">
+        <i class="fa fa-caret-down" aria-hidden="true" [@toggleIcon]="show1 ? 'show' : 'hide'"></i>
+        &nbsp; Chi tiết địa chỉ
+      </div>
+      <div [@toggle]="show1 ? 'show' : 'hide'" class="toggle-detail detail-address template-form">
+        <div *ngFor="let question of address" class="form-row">
+          <app-dynamic-input [question]="question" [form]="form"></app-dynamic-input>
+        </div>
+      </div>
+    </div>
+
+    <div class="group-form top20">
+      <div class="btn-detail" (click)="show2 = !show2">
+        <i class="fa fa-caret-down" aria-hidden="true" [@toggleIcon]="show2 ? 'show' : 'hide'"></i>
+        &nbsp; Mô tả chi tiết
+      </div>
+      <div [@toggle]="show2 ? 'show' : 'hide'" class="toggle-detail detail-description template-form">
+        <div *ngFor="let question of descriptor" class="form-row span2">
+          <app-dynamic-input [question]="question" [form]="form"></app-dynamic-input>
+        </div>
+      </div>
+    </div>
     <!-- <div class="form-row">
       <button type="submit" [disabled]="!form.valid">Save</button>
     </div> -->
