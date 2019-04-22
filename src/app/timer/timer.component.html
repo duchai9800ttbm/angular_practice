@@ -3,6 +3,13 @@
 </p>
 <form [formGroup]="form">
   {{form.get('datetime').value}} <br>
-  {{form.get('datetime').value | date}}
+  {{form.get('datetime').value | date: 'short'}}
   <app-time formControlName="datetime"></app-time>
+  <div formArrayName="items">
+    <div *ngFor="let item of form.get('items').controls; let i = index" [formGroupName]="i">
+      <button (click)="addItem()">add</button>
+      <button (click)="delItem(i)">delete</button>
+      <input type="text" formControlName="name">
+    </div>
+  </div>
 </form>

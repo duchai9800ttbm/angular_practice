@@ -15,6 +15,9 @@ import { CurrencyDirective } from './directives/currency.directive';
 import { TimerComponent } from './timer/timer.component';
 import { TimeComponent } from './timer/time/time.component';
 import { UtcComponent } from './timer/utc/utc.component';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { DatePickerModule, TimePickerModule, DateInputModule } from '@progress/kendo-angular-dateinputs';
+import { DateDirective } from './directives/date.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { UtcComponent } from './timer/utc/utc.component';
     TimerComponent,
     TimeComponent,
     UtcComponent,
+    DateDirective,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,11 @@ import { UtcComponent } from './timer/utc/utc.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputsModule,
+    DatePickerModule,
+    TimePickerModule,
+    DateInputModule
   ],
   providers: [
     {

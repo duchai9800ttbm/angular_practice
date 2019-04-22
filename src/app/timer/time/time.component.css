@@ -1,0 +1,34 @@
+
+
+kendo-dateinput {
+  width: 100%;
+}
+
+
+.clock > kendo-timepicker,
+.clock > kendo-datepicker {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-radius: 0;
+}
+
+.clock {
+  left: -1px;
+  position: relative;
+  overflow: hidden;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  background: #f4f4f4;
+  border: none;
+  /* border: 1px solid transparent; */
+  box-sizing: content-box;
+  border-top: 1px solid #ACACAC;
+  border-bottom: 1px solid #ACACAC;
+}
+
+form > div {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}

@@ -157,3 +157,7 @@ ul, p, label, h2 {
 .span2 .wrapper {
   grid-template-columns: 25% 75% !important;
 }
+
+button:focus {
+  outline: 0 !important;
+}

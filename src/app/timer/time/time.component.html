@@ -1,5 +1,14 @@
-<form [formGroup]="form1" (change)="show()">
-  <input type="date" formControlName="date">
-  <input type="time" formControlName="time">
-  <!-- <button (click)="show()">dsc</button> -->
+<form [formGroup]="form1">
+  <div>
+    <kendo-dateinput formControlName="date" [format]="'dd-MM-yyyy HH:mm'" (change)="onInputChange()" formatPlaceholder="formatPattern" (focus)="onFocus()" (blur)="onBlur()" [appDate]="a" #a (appDateChange)="dateChange($event)"></kendo-dateinput>
+    <button (click)="date.toggle(); time.toggle(false)" class="clock">
+      <span class="k-icon k-i-calendar"></span>
+      <kendo-datepicker formControlName="date" #date (valueChange)="onValueChange()"></kendo-datepicker>
+    </button>
+    <button (click)="time.toggle(); date.toggle(false)" class="clock">
+      <span class="k-icon k-i-clock"></span>
+      <kendo-timepicker formControlName="time" #time (valueChange)="onValueChange()"></kendo-timepicker>
+    </button>
+    <!-- <button (click)="show()">dsc</button> -->
+  </div>
 </form>
