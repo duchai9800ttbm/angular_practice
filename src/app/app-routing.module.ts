@@ -8,15 +8,17 @@ import { NavComponent } from './nav/nav.component';
 const routes: Routes = [
   {
     path: 'home-test',
-    loadChildren: './home-test/home-test.module#HomeTestModule'
+    loadChildren: './home-test/home-test.module#HomeTestModule',
+    canActivate: [GuardService]
   },
-  { path: '', redirectTo: 'home-test', pathMatch: 'full' },
+  { path: '', redirectTo: 'home-test', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { enableTracing: false })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [GuardService]
 })
 export class AppRoutingModule { }

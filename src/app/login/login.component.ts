@@ -26,13 +26,16 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.auth.login(this.user.username, this.user.password).subscribe(user => {
-      console.log(user.result.token);
-      localStorage.setItem('token', user.result.token);
-      localStorage.setItem('objectId', user.result.objectId);
+
+    console.log(this.user);
+
+    this.auth.login('admin', 'bys@123').subscribe(user => {
       console.log(user);
-      this.invalidUser = false;
-      this.router.navigate(['/']);
+      // localStorage.setItem('token', user.result.token);
+      // localStorage.setItem('objectId', user.result.objectId);
+      // console.log(user);
+      // this.invalidUser = false;
+      // this.router.navigate(['/']);
     }, err => {
       console.log(err);
       if (err.status === 401) {
