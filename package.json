@@ -32,7 +32,7 @@
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "ngx-pagination": "^3.2.1",
     "remove": "^0.1.5",
     "rxjs": "~6.3.3",
